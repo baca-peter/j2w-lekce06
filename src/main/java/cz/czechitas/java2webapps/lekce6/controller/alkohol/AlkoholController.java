@@ -27,7 +27,7 @@ public class AlkoholController {
   }
 
   @PostMapping("")
-  public Object form(@ModelAttribute("form") AlkoholForm form, BindingResult bindingResult) {
+  public Object form(@ModelAttribute("form") @Valid AlkoholForm form, BindingResult bindingResult) {
     if (bindingResult.hasErrors()) {
       return "/alkohol/formular";
     }
